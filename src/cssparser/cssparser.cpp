@@ -106,12 +106,12 @@ uint8_t CSSParser::getColorComponent() {
 }
 
 Value* CSSParser::parseDeclarationValue() {
-  if (isnumber(getCurrentChar())) {
+  if (isdigit(getCurrentChar())) {
     std::string value;
     value.push_back(getCurrentChar());
     inputPos++;
     bool dot_seen = false;
-    while (isnumber(getCurrentChar()) || getCurrentChar() == '.') {
+    while (isdigit(getCurrentChar()) || getCurrentChar() == '.') {
       value.push_back(getCurrentChar());
       inputPos++;
     }
